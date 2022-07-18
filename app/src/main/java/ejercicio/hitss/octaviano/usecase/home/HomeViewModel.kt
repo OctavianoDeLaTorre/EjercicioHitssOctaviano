@@ -1,13 +1,9 @@
 package ejercicio.hitss.octaviano.usecase.home
 
-import android.util.Log
 import androidx.lifecycle.*
 import ejercicio.hitss.octaviano.model.ScheduleElement
-import ejercicio.hitss.octaviano.provider.retrofit.RetrofitClient
 import ejercicio.hitss.octaviano.utils.BaseViewModel
 import ejercicio.hitss.octaviano.utils.DateUtility
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 class HomeViewModel : BaseViewModel() {
 
@@ -31,10 +27,8 @@ class HomeViewModel : BaseViewModel() {
      * Obtener las lista de programas de la fecha actual
      */
     fun getSchedule() {
-        _loading.value = true
-        viewModelScope.launch(Dispatchers.IO) {
+        launchIO {
             _tvPrograms.postValue(provider.getScheduleOf(date = DateUtility.getDate()))
-            _loading.postValue(false)
         }
     }
 

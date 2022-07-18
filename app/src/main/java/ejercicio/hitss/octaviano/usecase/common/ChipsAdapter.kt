@@ -5,6 +5,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import ejercicio.hitss.octaviano.databinding.ChipItemBinding
 
+/**
+ * Adaptador para muestrar una lista de chips.
+ *
+ * @param strings Lista de objetos para mostrar en chips.
+ */
 class ChipsAdapter(private val strings: List<Any>) :
     RecyclerView.Adapter<ChipsAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

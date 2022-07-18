@@ -1,7 +1,9 @@
 package ejercicio.hitss.octaviano.utils
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import android.net.Uri
 import android.os.Build
 import android.text.Html
@@ -45,8 +47,8 @@ fun Context.launchUrl(url: String) {
         val intent = Intent(Intent.ACTION_VIEW, uri)
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
         this.startActivity(intent)
-    } catch (e:Exception){
-        Toast.makeText(this, "Ocurrio un error al abrir al url", Toast.LENGTH_LONG).show()
+    } catch (e: Exception) {
+        Toast.makeText(this, "Ocurrió un error al abrir al url", Toast.LENGTH_LONG).show()
     }
 }
 
@@ -56,5 +58,10 @@ fun View.hiden() {
 
 fun View.show() {
     this.visibility = View.VISIBLE
+}
+
+fun Activity.lockPortraitOrientation() {
+    if (DeviceUtility.getDeviceType(this) == DeviceUtility.Device.PHONE)
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 }
 

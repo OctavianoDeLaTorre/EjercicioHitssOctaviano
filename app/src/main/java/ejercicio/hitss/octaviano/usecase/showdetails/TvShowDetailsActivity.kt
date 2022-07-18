@@ -1,5 +1,6 @@
 package ejercicio.hitss.octaviano.usecase.showdetails
 
+import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
@@ -24,6 +25,7 @@ class TvShowDetailsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityTvShowDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        this.lockPortraitOrientation()
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         onLoading()
         getIdShow()
@@ -84,11 +86,11 @@ class TvShowDetailsActivity : AppCompatActivity() {
      */
     private fun onLoadedShow() {
         model.show.observe(this) { show ->
-            setShowInfo(show)
+            updateUI(show)
         }
     }
 
-    private fun setShowInfo(show: Show) {
+    private fun updateUI(show: Show) {
         if (show.image != null)
             binding.image.loadNetworkImage(show.image.medium)
         binding.textShowName.text = show.name

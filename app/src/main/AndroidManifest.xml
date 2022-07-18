@@ -36,7 +36,7 @@
         <activity
             android:name=".usecase.home.HomeActivity"
             android:exported="true"
-            android:label="@string/welcome">
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

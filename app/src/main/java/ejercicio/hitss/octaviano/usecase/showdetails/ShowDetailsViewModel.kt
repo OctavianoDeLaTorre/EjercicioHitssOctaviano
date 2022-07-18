@@ -25,7 +25,7 @@ open class ShowDetailsViewModel : BaseViewModel() {
      * @param id Id del show de tv
      */
     fun getShow(id: Long) {
-        viewModelScope.launch(Dispatchers.IO) {
+        launchIO {
             _show.postValue(provider.getShow(id))
         }
     }

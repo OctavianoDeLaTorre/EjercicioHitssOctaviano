@@ -1,7 +1,6 @@
 package ejercicio.hitss.octaviano.usecase.common
 
 import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView

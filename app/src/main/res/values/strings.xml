@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">EjercicioHitssOctaviano</string>
+    <string name="app_name">TV API | TVmaze</string>
     <string name="welcome">Bienvenido!</string>
     <string name="search_title">Buscar...</string>
     <string name="details">Detalles</string>

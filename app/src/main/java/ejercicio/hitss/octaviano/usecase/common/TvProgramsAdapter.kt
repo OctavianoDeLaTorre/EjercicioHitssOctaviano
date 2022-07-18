@@ -10,6 +10,10 @@ import ejercicio.hitss.octaviano.model.ScheduleElement
 import ejercicio.hitss.octaviano.usecase.showdetails.TvShowDetailsActivity
 import ejercicio.hitss.octaviano.utils.loadNetworkImage
 
+/**
+ * @param context Contexto para iniciar actividad de detalles del Show.
+ * @param dataSet Lista de resultados de la busqued.
+ */
 class TvProgramsAdapter(val context: Context, private val dataSet: List<ScheduleElement>) :
     RecyclerView.Adapter<TvProgramsAdapter.ViewHolder>() {
 

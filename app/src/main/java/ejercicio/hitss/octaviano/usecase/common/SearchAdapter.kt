@@ -11,6 +11,10 @@ import ejercicio.hitss.octaviano.model.SearchResult
 import ejercicio.hitss.octaviano.usecase.showdetails.TvShowDetailsActivity
 import ejercicio.hitss.octaviano.utils.loadNetworkImage
 
+/**
+ * @param context Contexto para iniciar actividad de detalles del Show.
+ * @param dataSet Lista de resultados de la busqued.
+ */
 class SearchAdapter(val context: Context, private val dataSet: List<SearchResult>) :
     RecyclerView.Adapter<SearchAdapter.ViewHolder>() {
 

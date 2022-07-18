@@ -3,6 +3,7 @@ package ejercicio.hitss.octaviano.usecase.home
 import android.app.SearchManager
 import android.content.ComponentName
 import android.content.Context
+import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -12,6 +13,8 @@ import ejercicio.hitss.octaviano.R
 import ejercicio.hitss.octaviano.databinding.ActivityMainBinding
 import ejercicio.hitss.octaviano.usecase.common.TvProgramsAdapter
 import ejercicio.hitss.octaviano.usecase.search.SearchActivity
+import ejercicio.hitss.octaviano.utils.DeviceUtility
+import ejercicio.hitss.octaviano.utils.lockPortraitOrientation
 
 class HomeActivity : AppCompatActivity() {
 
@@ -23,6 +26,7 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        this.lockPortraitOrientation()
         supportActionBar?.elevation = 0f
         setTitle()
         onLoading()
